@@ -3,171 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestCare Physiotherapy | Coming Soon</title>
-    
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>BestCare Physiotherapy | Delhi NCR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c7da0;
-            --secondary: #61a5c2;
-            --dark: #012a4a;
-            --text: #4a5568;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+        .medical-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        
+        /* Smooth Fade In */
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 125, 160, 0.4); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(44, 125, 160, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 125, 160, 0); }
+        /* WhatsApp Pulse */
+        .wa-pulse {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        /* Modal Animation */
+        #launchModal {
+            transition: opacity 0.4s ease, visibility 0.4s;
         }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            text-align: center;
-        }
-
-        .container {
-            padding: 3rem 1.5rem;
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-            z-index: 2;
-        }
-
-        .logo-container { margin-bottom: 30px; }
-        .main-logo { max-width: 180px; height: auto; transition: 0.3s; }
-        .main-logo:hover { transform: scale(1.05); }
-
-        h1 {
-            font-size: 2.8rem;
-            margin: 10px 0;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        .badge {
-            background-color: var(--primary);
-            color: white;
-            padding: 8px 22px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 35px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: pulse 2s infinite;
-        }
-
-        .main-content p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--text);
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        p.highlight-text { animation-delay: 0.3s; }
-        p.service-text { animation-delay: 0.6s; }
-
-        .cta-text {
-            margin-top: 50px;
-            font-weight: 700;
-            font-size: 2.2rem;
-            color: var(--secondary);
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 1s forwards;
-            letter-spacing: -1px;
-        }
-
-        /* Floating WhatsApp Icon */
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            text-decoration: none;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .whatsapp-float:hover { 
-            background-color: #128c7e; 
-            transform: scale(1.1);
-        }
-
-        /* Background soft circles */
-        .bg-circle {
-            position: absolute;
-            z-index: 1;
-            background: rgba(44, 125, 160, 0.04);
-            border-radius: 50%;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .main-content p { font-size: 1.1rem; }
-            .cta-text { font-size: 1.8rem; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+        .modal-content {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
     </style>
 </head>
-<body>
+<body class="medical-gradient text-slate-900 overflow-x-hidden">
 
-    <div class="bg-circle" style="width: 400px; height: 400px; top: -150px; left: -100px;"></div>
-    <div class="bg-circle" style="width: 300px; height: 300px; bottom: -100px; right: -50px;"></div>
+    <!-- Launch Pop-up Modal -->
+    <div id="launchModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 invisible">
+        <div class="modal-content bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden transform scale-90 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            
+            <div class="bg-blue-600 p-8 text-center text-white">
+                <div class="inline-block bg-blue-500/30 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 border border-blue-400/30">New Launch Offer</div>
+                <h2 class="text-3xl font-bold mb-2">Website Coming Soon!</h2>
+                <p class="text-blue-100 opacity-90">Our digital clinic is almost ready.</p>
+            </div>
+            
+            <div class="p-8 text-center">
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="bg-blue-50 border border-blue-100 p-4 rounded-2xl">
+                        <span class="block text-2xl font-bold text-blue-700">20% OFF</span>
+                        <span class="text-sm text-blue-600 font-medium tracking-tight">On all home visit bookings</span>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-2xl">
+                        <span class="block text-2xl font-bold text-emerald-700">₹0 Consultation</span>
+                        <span class="text-sm text-emerald-600 font-medium tracking-tight">Limited time launch benefit</span>
+                    </div>
+                </div>
+                
+                <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                    While we build our online home, appointments are open via WhatsApp. Book your expert home visit today!
+                </p>
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="BestCare Logo" class="main-logo">
+                <a href="https://wa.me/919868487867?text=Hi%2C%20I'd%20like%20to%20avail%20the%20launch%20offer%20for%20a%20physiotherapy%20session." 
+                   class="inline-flex items-center justify-center w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-emerald-200 gap-2 group">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.945 1.595 5.707l-.995 3.635 3.889-1.019zm10.982-4.83c-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.273-.705.886-.864 1.068-.159.182-.318.204-.59.068-.272-.136-1.15-.423-2.19-1.353-.809-.721-1.355-1.612-1.513-1.886-.159-.273-.017-.42.12-.558.122-.122.272-.318.408-.477.136-.159.182-.273.272-.455.091-.182.046-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.443-.46-.613-.468l-.522-.01c-.182 0-.477.068-.727.341-.25.273-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.921 2.933 4.653 4.111.65.28 1.157.447 1.553.573.652.207 1.245.178 1.714.108.523-.078 1.61-.659 1.837-1.295.227-.636.227-1.182.159-1.295-.068-.113-.25-.182-.522-.318z"/></svg>
+                    Book with Launch Offer
+                </a>
+            </div>
         </div>
-
-        <h1>BestCare Physiotherapy</h1>
-        <div class="badge">15 Years of Offline Legacy</div>
-
-        <div class="main-content">
-            <p class="highlight-text">
-                With a legacy of <strong>15 years</strong> and stories of success from <strong>hundreds of patients across Delhi NCR</strong>, our trusted care is now coming online.
-            </p>
-            <p class="service-text">
-                We are expanding our reach to serve even more patients with our <strong>world-class home visit services</strong>, delivered by expert trained professionals right at your doorstep.
-            </p>
-        </div>
-
-        <div class="cta-text">See You Soon!</div>
     </div>
 
-    <a href="https://wa.me/919868487867" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Navigation -->
+    <nav class="absolute top-0 w-full z-10 p-6 md:p-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="BestCare Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback Logo if logo.png fails -->
+                    <div style="display:none;" class="bg-blue-600 p-2 rounded-xl text-white shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-slate-900 leading-none">BestCare</span>
+                    <span class="text-xs font-semibold text-blue-600 uppercase tracking-widest">Physiotherapy</span>
+                </div>
+            </div>
+            <div class="hidden sm:block">
+                <a href="tel:+919868487867" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    9868487867
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919868487867?text=Hi%2C%20I'd%20like%20to%20book%20a%20home%20physiotherapy%20session." 
+       class="fixed bottom-6 right-6 z-[90] flex items-center justify-center w-16 h-16 bg-emerald-500 text-white rounded-full shadow-2xl transition-transform hover:scale-110 active:scale-95 wa-pulse group">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.945 1.595 5.707l-.995 3.635 3.889-1.019zm10.982-4.83c-.272-.136-1.61-.795-1.86-.886-.25-.091-.432-.136-.613.136-.182.273-.705.886-.864 1.068-.159.182-.318.204-.59.068-.272-.136-1.15-.423-2.19-1.353-.809-.721-1.355-1.612-1.513-1.886-.159-.273-.017-.42.12-.558.122-.122.272-.318.408-.477.136-.159.182-.273.272-.455.091-.182.046-.341-.023-.477-.068-.136-.613-1.477-.84-2.023-.222-.534-.443-.46-.613-.468l-.522-.01c-.182 0-.477.068-.727.341-.25.273-.954.932-.954 2.273s.977 2.636 1.114 2.818c.136.182 1.921 2.933 4.653 4.111.65.28 1.157.447 1.553.573.652.207 1.245.178 1.714.108.523-.078 1.61-.659 1.837-1.295.227-.636.227-1.182.159-1.295-.068-.113-.25-.182-.522-.318z"/></svg>
+        <span class="absolute right-full mr-4 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">Book via WhatsApp</span>
     </a>
 
+    <!-- Main Content -->
+    <main class="min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 fade-in">
+        
+        <!-- Senior Specialist Mention -->
+        <div class="inline-flex items-center gap-4 bg-white/60 border border-white p-2 pr-6 rounded-full shadow-sm mb-10">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold">ST</div>
+            <div class="text-left">
+                <span class="block text-sm font-bold text-slate-900 leading-none">Sahitya K. Tyagi</span>
+                <span class="text-[10px] text-blue-600 font-bold uppercase tracking-wider">Senior Physiotherapist & Paralysis Specialist</span>
+            </div>
+        </div>
+
+        <div class="max-w-4xl w-full text-center space-y-10">
+            <!-- Hero Text -->
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+                    Expert Healing, <br>
+                    <span class="text-blue-600">at Your Doorstep.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    With a legacy of <span class="font-bold text-slate-900">15 years</span> and success stories from hundreds across Delhi NCR, we are bringing world-class physiotherapy to your home in <span class="text-blue-600 font-semibold">2026</span>.
+                </p>
+            </div>
+
+            <!-- Launch Preview Card -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-start gap-4">
+                    <div class="bg-blue-50 p-3 rounded-2xl text-blue-600">
+                        <!-- Activity/Pulse Icon for Paralysis Specialist -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900">Paralysis Specialist</h3>
+                        <p class="text-xs text-slate-500 mt-1">Specialized neuro-rehabilitation protocols</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-start gap-4">
+                    <div class="bg-blue-50 p-3 rounded-2xl text-blue-600">
+                        <!-- Stethoscope Icon for Home Visits -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2a.3.3 0 0 0-.2.3Z"/><path d="M3.3 7a4.9 4.9 0 0 0 2 6"/><path d="M18 19h2a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><path d="M10 19a2 2 0 0 0 2 2h3.5l1.7-4.5c.2-.5.8-.5 1 0l1.8 4.5H22"/><path d="M8 19a6 6 0 0 0 12 0"/><path d="M5 2v1"/><path d="M11 2v1"/><path d="M3 5h6v2H3z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900">Expert Home Visits</h3>
+                        <p class="text-xs text-slate-500 mt-1">Available across all Delhi NCR locations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Launch Status -->
+            <div class="pt-8">
+                <h2 class="text-2xl font-bold text-slate-900">See You Soon!</h2>
+                <p class="text-slate-500 mt-2 font-medium">Full digital experience launching in 2026. Book via WhatsApp today.</p>
+                
+                <div class="mt-8 flex justify-center">
+                    <a href="https://wa.me/919868487867" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all flex items-center gap-3 shadow-xl shadow-slate-200">
+                        <span>Book Appointment Now</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 border-t border-slate-200/60 bg-white/30 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-6">
+            <div class="flex justify-center mb-4">
+                <img src="logo.png" alt="BestCare" class="h-8 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" onerror="this.style.display='none'">
+            </div>
+            <div class="flex justify-center space-x-8 text-slate-400 font-bold uppercase tracking-widest text-[10px]">
+                <span class="text-blue-600">Trust</span>
+                <span>•</span>
+                <span class="text-blue-600">Care</span>
+                <span>•</span>
+                <span class="text-blue-600">Recovery</span>
+            </div>
+            <p class="text-slate-400 text-xs">© 2026 BestCare Physiotherapy. Delhi NCR Leading Home Care Provider.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality
+        function openModal() {
+            const modal = document.getElementById('launchModal');
+            const content = modal.querySelector('.modal-content');
+            modal.classList.remove('invisible');
+            modal.classList.add('opacity-100');
+            content.classList.remove('scale-90');
+            content.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('launchModal');
+            const content = modal.querySelector('.modal-content');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('invisible');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-90');
+        }
+
+        // Open modal on page load with slight delay
+        window.addEventListener('load', () => {
+            setTimeout(openModal, 800);
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('launchModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
