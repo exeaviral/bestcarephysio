@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestCare Physiotherapy | Coming Soon</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c7da0;
+            --secondary: #61a5c2;
+            --dark: #012a4a;
+            --text: #4a5568;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 125, 160, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(44, 125, 160, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 125, 160, 0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .container {
+            padding: 3rem 1.5rem;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+            z-index: 2;
+        }
+
+        .logo-container { margin-bottom: 30px; }
+        .main-logo { max-width: 180px; height: auto; transition: 0.3s; }
+        .main-logo:hover { transform: scale(1.05); }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 10px 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 35px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: pulse 2s infinite;
+        }
+
+        .main-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        p.highlight-text { animation-delay: 0.3s; }
+        p.service-text { animation-delay: 0.6s; }
+
+        .cta-text {
+            margin-top: 50px;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 1s forwards;
+            letter-spacing: -1px;
+        }
+
+        /* Floating WhatsApp Icon */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            text-decoration: none;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover { 
+            background-color: #128c7e; 
+            transform: scale(1.1);
+        }
+
+        /* Background soft circles */
+        .bg-circle {
+            position: absolute;
+            z-index: 1;
+            background: rgba(44, 125, 160, 0.04);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .main-content p { font-size: 1.1rem; }
+            .cta-text { font-size: 1.8rem; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-circle" style="width: 400px; height: 400px; top: -150px; left: -100px;"></div>
+    <div class="bg-circle" style="width: 300px; height: 300px; bottom: -100px; right: -50px;"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="BestCare Logo" class="main-logo">
+        </div>
+
+        <h1>BestCare Physiotherapy</h1>
+        <div class="badge">15 Years of Offline Legacy</div>
+
+        <div class="main-content">
+            <p class="highlight-text">
+                With a legacy of <strong>15 years</strong> and stories of success from <strong>hundreds of patients across Delhi NCR</strong>, our trusted care is now coming online.
+            </p>
+            <p class="service-text">
+                We are expanding our reach to serve even more patients with our <strong>world-class home visit services</strong>, delivered by expert trained professionals right at your doorstep.
+            </p>
+        </div>
+
+        <div class="cta-text">See You Soon!</div>
+    </div>
+
+    <a href="https://wa.me/919868487867" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
