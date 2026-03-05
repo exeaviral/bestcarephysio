@@ -1,242 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestCare Physiotherapy | Delhi NCR</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Plus+Jakarta+Sans', sans-serif; 
-            -webkit-font-smoothing: antialiased;
-        }
-        .medical-gradient { 
-            background: radial-gradient(circle at top right, #eff6ff, #f8fafc); 
-        }
-        
-        /* Smooth, Hardware-Accelerated Animations */
-        .fade-in { 
-            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            will-change: transform, opacity;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* WhatsApp Pulse Optimized */
-        .wa-pulse {
-            animation: pulse-green 2.5s infinite;
-            will-change: box-shadow;
-        }
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-
-        /* Faster, Smoother Modal */
-        #launchModal {
-            transition: opacity 0.3s ease, visibility 0.3s;
-        }
-        .modal-content {
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            will-change: transform;
-        }
-        
-        /* Glassmorphism Optimization */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestCare Physio | Home Physiotherapy in Delhi NCR | Stroke &amp; Paralysis Rehab</title>
+  <meta name="description" content="BestCare Physio offers expert home physiotherapy in Delhi NCR. Specializing in stroke rehabilitation, paralysis treatment &amp; recovery. Book via WhatsApp. ☎ +91 9868487867">
+  <link rel="canonical" href="https://bestcarephysio.in/">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://bestcarephysio.in/#business",
+        "name": "BestCare Physio",
+        "image": "https://bestcarephysio.in/logo.png",
+        "description": "Expert home physiotherapy in Delhi NCR. Specialising in stroke rehabilitation, paralysis treatment and recovery.",
+        "url": "https://bestcarephysio.in/",
+        "telephone": "+91-9868487867",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "E-241A, GTB Enclave",
+          "addressLocality": "Dilshad Garden",
+          "addressRegion": "Delhi",
+          "postalCode": "110095",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 28.6847,
+          "longitude": 77.3064
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        "areaServed": ["Delhi", "Ghaziabad", "Delhi NCR"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is home physiotherapy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Home physiotherapy is a professional physiotherapy service delivered at the patient's home by a certified physiotherapist. It is ideal for patients recovering from stroke, paralysis, surgery, or injury who find it difficult to travel to a clinic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you visit patients at home in Delhi NCR?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, BestCare Physio provides home visits across Delhi NCR including Dilshad Garden, Shahdara, Anand Vihar, Vivek Vihar, East Delhi, Vasundhara, Kaushambi, and Indirapuram."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What conditions do you treat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We treat stroke, paralysis, spinal cord injuries, gait and balance disorders, back pain, knee pain, post-surgical rehabilitation, and neurological conditions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I book a home physiotherapy session?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can book by calling +91 9868487867 or messaging us on WhatsApp. We will schedule a convenient time for a home visit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cost of home physiotherapy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cost depends on the treatment required and session duration. We offer affordable packages for home physiotherapy in Delhi NCR. Contact us for a personalised quote."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does stroke rehabilitation take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Stroke rehabilitation duration varies by severity. Mild strokes may see significant improvement in weeks, while severe strokes may require months to years of therapy. Consistent physiotherapy significantly improves outcomes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="medical-gradient text-slate-900 overflow-x-hidden min-h-screen">
+<body>
 
-    <!-- Launch Pop-up Modal -->
-    <div id="launchModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-[2px] opacity-0 invisible">
-        <div class="modal-content bg-white rounded-[2rem] shadow-2xl max-w-lg w-full overflow-hidden transform scale-95 relative">
-            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 transition-colors z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </button>
-            
-            <div class="bg-blue-600 p-8 text-center text-white relative">
-                <div class="absolute inset-0 opacity-10 pointer-events-none">
-                    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 100 C 20 0 50 0 100 100" stroke="white" fill="transparent" stroke-width="2"/></svg>
-                </div>
-                <div class="inline-block bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 border border-white/20">Exclusive Launch Offer</div>
-                <h2 class="text-3xl font-bold mb-1 tracking-tight">Launching in 2026</h2>
-                <p class="text-blue-100/90 text-sm">Our world-class digital clinic is coming.</p>
-            </div>
-            
-            <div class="p-8 text-center">
-                <div class="grid grid-cols-2 gap-3 mb-6">
-                    <div class="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl">
-                        <span class="block text-2xl font-bold text-blue-700">20% OFF</span>
-                        <span class="text-[10px] text-blue-600 font-bold uppercase tracking-wider">All Bookings</span>
-                    </div>
-                    <div class="bg-emerald-50/50 border border-emerald-100 p-4 rounded-2xl">
-                        <span class="block text-2xl font-bold text-emerald-700">₹0 Fee</span>
-                        <span class="text-[10px] text-emerald-600 font-bold uppercase tracking-wider">Consultation</span>
-                    </div>
-                </div>
-                
-                <p class="text-slate-500 text-sm mb-8 leading-relaxed">
-                    Until we go live, please book your expert home visits directly via WhatsApp to avail these limited-time offers.
-                </p>
-
-                <a href="https://wa.me/919868487867?text=Hi%2C%20I'd%20like%20to%20avail%20the%202026%20launch%20offer%20for%20a%20physiotherapy%20session." 
-                   class="inline-flex items-center justify-center w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-emerald-100 gap-3 group">
-                    <img src="whatsapp.png" alt="" class="w-5 h-5 object-contain" loading="eager">
-                    Book with Launch Offer
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="absolute top-0 w-full z-10 p-6 md:p-10">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="logo.png" alt="BestCare Physiotherapy" class="h-10 w-auto object-contain" onerror="this.style.display='none';">
-                <div class="flex flex-col border-l border-slate-200 pl-4">
-                    <span class="text-lg font-bold tracking-tight text-slate-900 leading-none">BestCare</span>
-                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em]">Physiotherapy</span>
-                </div>
-            </div>
-            <div class="hidden sm:block">
-                <a href="tel:+919868487867" class="bg-white/50 hover:bg-white px-5 py-2.5 rounded-full text-sm font-bold text-slate-700 transition-all flex items-center gap-2 border border-slate-200 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    9868487867
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919868487867?text=Hi%20BestCare%2C%20I%20am%20interested%20in%20booking%20a%20physiotherapy%20session." 
-       class="fixed bottom-8 right-8 z-[90] flex items-center justify-center w-16 h-16 bg-emerald-500 text-white rounded-full shadow-2xl transition-transform hover:scale-105 active:scale-95 wa-pulse group">
-        <img src="whatsapp.png" alt="WhatsApp" class="w-9 h-9 object-contain" loading="eager">
-        <span class="absolute right-full mr-4 bg-slate-900 text-white text-xs px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl transform translate-x-2 group-hover:translate-x-0">Book via WhatsApp</span>
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="BestCare Physio Logo" width="44" height="44">
+      <div class="nav-logo-text">
+        <span class="brand">BestCare Physio</span>
+        <span class="tagline">Paralysis &amp; Stroke Specialists</span>
+      </div>
     </a>
-
-    <!-- Main Content -->
-    <main class="min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-20 fade-in">
-        
-        <!-- Senior Specialist Mention -->
-        <div class="inline-flex items-center gap-4 glass-panel p-2 pr-6 rounded-full shadow-sm mb-12">
-            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-inner">SKT</div>
-            <div class="text-left">
-                <span class="block text-sm font-bold text-slate-900 leading-none">Sahitya K. Tyagi</span>
-                <span class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-0.5 block">Senior Physiotherapist & Paralysis Specialist</span>
-            </div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="services.html">Services</a>
+        <div class="dropdown-menu">
+          <a href="services/stroke-rehabilitation.html">Stroke Rehabilitation</a>
+          <a href="services/paralysis-treatment.html">Paralysis Treatment</a>
+          <a href="services/spinal-cord-injury-rehab.html">Spinal Cord Injury</a>
+          <a href="services/gait-training-therapy.html">Gait Training Therapy</a>
+          <a href="services/home-physiotherapy-delhi.html">Home Physiotherapy Delhi</a>
         </div>
-
-        <div class="max-w-4xl w-full text-center">
-            <!-- Hero Text -->
-            <div class="space-y-8 mb-16">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.05]">
-                    Recovery Reimagined, <br>
-                    <span class="text-blue-600">at Your Doorstep.</span>
-                </h1>
-                
-                <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
-                    With a legacy of <span class="text-slate-900 font-bold underline decoration-blue-200 decoration-4 underline-offset-4">15 years</span> and hundreds of success stories, Delhi NCR's most trusted care is coming online in <span class="text-blue-600 font-bold">2026</span>.
-                </p>
-            </div>
-
-            <!-- Feature Cards (Replaced emojis with clean medical SVGs) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto text-left">
-                <!-- Card 1: Specialist -->
-                <div class="bg-white p-7 rounded-[2rem] shadow-sm border border-slate-100 flex items-start gap-5 hover:shadow-md transition-shadow">
-                    <div class="bg-blue-50 p-3.5 rounded-2xl text-blue-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg">Paralysis Specialization</h3>
-                        <p class="text-sm text-slate-500 mt-1 leading-relaxed">Expert neuro-rehabilitation designed for rapid home recovery.</p>
-                    </div>
-                </div>
-                <!-- Card 2: Home Visits -->
-                <div class="bg-white p-7 rounded-[2rem] shadow-sm border border-slate-100 flex items-start gap-5 hover:shadow-md transition-shadow">
-                    <div class="bg-blue-50 p-3.5 rounded-2xl text-blue-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21v-7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-slate-900 text-lg">Expert Home Visits</h3>
-                        <p class="text-sm text-slate-500 mt-1 leading-relaxed">World-class clinical care delivered in the comfort of your home.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Closing Section -->
-            <div class="mt-20 space-y-8">
-                <div class="space-y-2">
-                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">See You Soon!</h2>
-                    <p class="text-slate-400 font-medium">The full digital portal launches in 2026.</p>
-                </div>
-                
-                <a href="https://wa.me/918383040436" class="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-slate-200 group">
-                    <span>Book Your Visit Now</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-            </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="locations.html">Locations</a>
+        <div class="dropdown-menu">
+          <a href="locations/physiotherapy-dilshad-garden.html">Dilshad Garden</a>
+          <a href="locations/physiotherapy-shahdara.html">Shahdara</a>
+          <a href="locations/physiotherapy-anand-vihar.html">Anand Vihar</a>
+          <a href="locations/physiotherapy-vivek-vihar.html">Vivek Vihar</a>
+          <a href="locations/physiotherapy-vasundhara.html">Vasundhara</a>
+          <a href="locations/physiotherapy-kaushambi.html">Kaushambi</a>
+          <a href="locations/physiotherapy-indirapuram.html">Indirapuram</a>
+          <a href="locations/physiotherapy-east-delhi.html">East Delhi</a>
         </div>
-    </main>
+      </div>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+919868487867" class="nav-phone"><i class="fas fa-phone"></i> +91 98684 87867</a>
+      <a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener"><img src="whatsapp.png" alt=""> Book Now</a>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Mobile navigation">
+  <div class="mobile-section-title">Main Pages</div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">All Services</a>
+  <a href="locations.html">All Locations</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-section-title">Services</div>
+  <a href="services/stroke-rehabilitation.html">Stroke Rehabilitation</a>
+  <a href="services/paralysis-treatment.html">Paralysis Treatment</a>
+  <a href="services/spinal-cord-injury-rehab.html">Spinal Cord Injury</a>
+  <a href="services/gait-training-therapy.html">Gait Training Therapy</a>
+  <a href="services/home-physiotherapy-delhi.html">Home Physiotherapy Delhi</a>
+  <div class="mobile-section-title">Locations</div>
+  <a href="locations/physiotherapy-dilshad-garden.html">Dilshad Garden</a>
+  <a href="locations/physiotherapy-shahdara.html">Shahdara</a>
+  <a href="locations/physiotherapy-anand-vihar.html">Anand Vihar</a>
+  <a href="locations/physiotherapy-vivek-vihar.html">Vivek Vihar</a>
+  <a href="locations/physiotherapy-vasundhara.html">Vasundhara</a>
+  <a href="locations/physiotherapy-kaushambi.html">Kaushambi</a>
+  <a href="locations/physiotherapy-indirapuram.html">Indirapuram</a>
+  <a href="locations/physiotherapy-east-delhi.html">East Delhi</a>
+  <div class="mobile-section-title">Contact</div>
+  <a href="tel:+919868487867"><i class="fas fa-phone"></i> +91 98684 87867</a>
+  <a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." target="_blank"><img src="whatsapp.png" alt="" style="width:16px;vertical-align:middle;margin-right:4px"> Book via WhatsApp</a>
+</nav>
 
-    <!-- Footer -->
-    <footer class="w-full py-12 border-t border-slate-200/60 bg-white/40 backdrop-blur-md mt-auto">
-        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
-            <div class="flex justify-center">
-                <img src="logo.png" alt="BestCare" class="h-8 w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500" onerror="this.style.display='none'">
-            </div>
-            <div class="flex justify-center items-center gap-6 text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.3em]">
-                <span>Trust</span>
-                <div class="w-1 h-1 bg-slate-300 rounded-full"></div>
-                <span>Care</span>
-                <div class="w-1 h-1 bg-slate-300 rounded-full"></div>
-                <span>Recovery</span>
-            </div>
-            <p class="text-slate-400 text-xs font-medium">© 2026 BestCare Physiotherapy. Delhi NCR's Premier Home Care Network.</p>
+<main>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-content fade-in-up">
+        <span class="hero-label tag">Delhi NCR's #1 Home Physiotherapy Service</span>
+        <h1>Expert Home Physiotherapy <br><span>in Delhi NCR</span></h1>
+        <p class="hero-sub">Specialising in stroke rehabilitation, paralysis treatment and neurological recovery. Certified physiotherapists come to your home across Delhi, Ghaziabad and surrounding areas.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><img src="whatsapp.png" alt="WhatsApp" style="width:20px;vertical-align:middle;margin-right:6px"> Book via WhatsApp</a>
+          <a href="tel:+919868487867" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Call Now</a>
         </div>
-    </footer>
+        <div class="hero-meta">
+          <span><i class="fas fa-check-circle"></i> Certified Physiotherapists</span>
+          <span><i class="fas fa-check-circle"></i> Home Visits Available</span>
+          <span><i class="fas fa-check-circle"></i> 10+ Years Experience</span>
+        </div>
+      </div>
+      <div class="hero-visual fade-in-up">
+        <div class="hero-card">
+          <div class="hero-card-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Expert Rehabilitation</h3>
+          <p>Stroke, paralysis &amp; neuro recovery specialists</p>
+          <div class="hero-stats">
+            <div><strong>1000+</strong><span>Patients Treated</span></div>
+            <div><strong>10+</strong><span>Years Experience</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth Modal Toggle
-        function openModal() {
-            const modal = document.getElementById('launchModal');
-            const content = modal.querySelector('.modal-content');
-            modal.classList.remove('invisible');
-            modal.classList.add('opacity-100');
-            content.classList.remove('scale-95');
-            content.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-        }
+  <!-- Trust Badges -->
+  <section class="trust-badges">
+    <div class="container">
+      <div class="badges-grid">
+        <div class="badge-item">
+          <i class="fas fa-users"></i>
+          <div>
+            <strong>1000+</strong>
+            <span>Patients Treated</span>
+          </div>
+        </div>
+        <div class="badge-item">
+          <i class="fas fa-award"></i>
+          <div>
+            <strong>10+</strong>
+            <span>Years Experience</span>
+          </div>
+        </div>
+        <div class="badge-item">
+          <i class="fas fa-certificate"></i>
+          <div>
+            <strong>Certified</strong>
+            <span>Physiotherapists</span>
+          </div>
+        </div>
+        <div class="badge-item">
+          <i class="fas fa-home"></i>
+          <div>
+            <strong>Daily</strong>
+            <span>Home Visits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        function closeModal() {
-            const modal = document.getElementById('launchModal');
-            const content = modal.querySelector('.modal-content');
-            modal.classList.remove('opacity-100');
-            modal.classList.add('invisible');
-            content.classList.remove('scale-100');
-            content.classList.add('scale-95');
-            document.body.style.overflow = '';
-        }
+  <!-- Services Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Physiotherapy Services</h2>
+        <p>Comprehensive care for neurological and musculoskeletal conditions</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-brain"></i></div>
+          <h3>Stroke Rehabilitation</h3>
+          <p>Expert stroke rehabilitation at home. We help patients regain movement, speech support guidance, and independence after stroke.</p>
+          <a href="services/stroke-rehabilitation.html" class="card-link">Learn More →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-wheelchair"></i></div>
+          <h3>Paralysis Treatment</h3>
+          <p>Comprehensive paralysis physiotherapy for hemiplegia, paraplegia and more. Tailored plans to maximise recovery.</p>
+          <a href="services/paralysis-treatment.html" class="card-link">Learn More →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-bone"></i></div>
+          <h3>Spinal Cord Injury</h3>
+          <p>Specialised rehab for spinal cord injuries. We work to improve mobility, strength and daily function.</p>
+          <a href="services/spinal-cord-injury-rehab.html" class="card-link">Learn More →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-walking"></i></div>
+          <h3>Gait Training &amp; Balance</h3>
+          <p>Restore safe walking patterns and balance after neurological injury. Fall prevention and mobility training.</p>
+          <a href="services/gait-training-therapy.html" class="card-link">Learn More →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3>Back &amp; Knee Pain</h3>
+          <p>Effective physiotherapy for chronic back pain, knee pain, and joint issues — right at your doorstep.</p>
+          <a href="services.html" class="card-link">Learn More →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-home"></i></div>
+          <h3>Home Physio Delhi</h3>
+          <p>Certified physiotherapists visit your home across Delhi NCR. No travel, no stress — recovery in comfort.</p>
+          <a href="services/home-physiotherapy-delhi.html" class="card-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Trigger modal with refined delay
-        window.addEventListener('load', () => {
-            setTimeout(openModal, 600);
-        });
+  <!-- Why Choose Us -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose BestCare Physio?</h2>
+        <p>Trusted by over 1,000 patients across Delhi NCR</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+          <h3>Experienced Specialists</h3>
+          <p>Qualified physiotherapists with expertise in neurological and musculoskeletal rehabilitation.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-home"></i></div>
+          <h3>Home Visits Across Delhi NCR</h3>
+          <p>We come to you — no need to travel. Convenient home visits across Delhi and Ghaziabad.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
+          <h3>Personalised Treatment Plans</h3>
+          <p>Every patient receives a customised rehabilitation programme based on their specific needs and goals.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Affordable Care</h3>
+          <p>Quality physiotherapy at transparent, affordable pricing. Packages available for ongoing treatment.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-clock"></i></div>
+          <h3>Flexible Hours</h3>
+          <p>Sessions available 7 days a week, 9 AM to 8 PM, to fit around your schedule.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i class="fas fa-star"></i></div>
+          <h3>Trusted by 1000+ Patients</h3>
+          <p>Proven track record with over 1,000 patients treated across Delhi NCR.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Click outside to close
-        window.onclick = function(event) {
-            const modal = document.getElementById('launchModal');
-            if (event.target == modal) closeModal();
-        }
-    </script>
+  <!-- Testimonials -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Patients Say</h2>
+        <p>Real stories of recovery from our patients across Delhi NCR</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">
+            <p>"After my father's stroke, BestCare Physio was a godsend. The physiotherapist came home daily and within 3 months, my father was walking again. Highly recommended!"</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">RK</div>
+            <div class="testimonial-info">
+              <strong>Ravi Kumar</strong>
+              <small>Dilshad Garden</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">
+            <p>"Excellent service! My mother had right-side paralysis and after 6 months of dedicated home physiotherapy, she has regained significant movement. The team is professional, caring and punctual."</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">PS</div>
+            <div class="testimonial-info">
+              <strong>Priya Sharma</strong>
+              <small>Shahdara</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">
+            <p>"After my spinal cord injury, I was hopeless about recovery. BestCare Physio's team gave me hope and with their intensive rehabilitation, I can now walk with support. Life-changing service."</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">SG</div>
+            <div class="testimonial-info">
+              <strong>Suresh Gupta</strong>
+              <small>Indirapuram</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★</div>
+          <div class="testimonial-text">
+            <p>"Great physiotherapy service for elderly care. My 80-year-old mother has improved her balance and mobility significantly. The physiotherapist is patient and very knowledgeable."</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">MA</div>
+            <div class="testimonial-info">
+              <strong>Meena Agarwal</strong>
+              <small>Vasundhara</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <div class="testimonial-text">
+            <p>"Post knee surgery, I needed intensive physiotherapy at home. BestCare Physio provided exactly that — professional, effective and affordable. Back to normal life in 2 months!"</p>
+          </div>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">AS</div>
+            <div class="testimonial-info">
+              <strong>Arjun Singh</strong>
+              <small>Anand Vihar</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Areas We Serve</h2>
+        <p>Home physiotherapy across Delhi NCR</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Dilshad Garden</h3>
+          <p class="location-card-area">Home physiotherapy in Dilshad Garden and GTB Enclave, East Delhi.</p>
+          <a href="locations/physiotherapy-dilshad-garden.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Shahdara</h3>
+          <p class="location-card-area">Expert physiotherapy home visits serving Shahdara and nearby areas.</p>
+          <a href="locations/physiotherapy-shahdara.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Anand Vihar</h3>
+          <p class="location-card-area">Certified physiotherapists available for home sessions in Anand Vihar.</p>
+          <a href="locations/physiotherapy-anand-vihar.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Vivek Vihar</h3>
+          <p class="location-card-area">Neurological and musculoskeletal physiotherapy at home in Vivek Vihar.</p>
+          <a href="locations/physiotherapy-vivek-vihar.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Vasundhara</h3>
+          <p class="location-card-area">Home physiotherapy covering Vasundhara, Ghaziabad and surrounding areas.</p>
+          <a href="locations/physiotherapy-vasundhara.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Kaushambi</h3>
+          <p class="location-card-area">Stroke and paralysis rehabilitation home visits in Kaushambi, Ghaziabad.</p>
+          <a href="locations/physiotherapy-kaushambi.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> Indirapuram</h3>
+          <p class="location-card-area">Professional home physiotherapy available throughout Indirapuram.</p>
+          <a href="locations/physiotherapy-indirapuram.html" class="location-card-link">View Area →</a>
+        </div>
+        <div class="location-card">
+          <h3 class="location-card-title"><i class="fas fa-map-marker-alt"></i> East Delhi</h3>
+          <p class="location-card-area">Wide coverage across East Delhi for all physiotherapy home visit needs.</p>
+          <a href="locations/physiotherapy-east-delhi.html" class="location-card-link">View Area →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Answers to common questions about our home physiotherapy service</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <h3>What is home physiotherapy?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-1" class="faq-answer" role="region" aria-labelledby="faq-answer-1">
+            <p>Home physiotherapy is a professional physiotherapy service delivered at the patient's home by a certified physiotherapist. It is ideal for patients recovering from stroke, paralysis, surgery, or injury who find it difficult to travel to a clinic.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+            <h3>Do you visit patients at home in Delhi NCR?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-2" class="faq-answer" role="region" aria-labelledby="faq-answer-2">
+            <p>Yes, BestCare Physio provides home visits across Delhi NCR including Dilshad Garden, Shahdara, Anand Vihar, Vivek Vihar, East Delhi, Vasundhara, Kaushambi, and Indirapuram.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+            <h3>What conditions do you treat?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-3" class="faq-answer" role="region" aria-labelledby="faq-answer-3">
+            <p>We treat stroke, paralysis, spinal cord injuries, gait and balance disorders, back pain, knee pain, post-surgical rehabilitation, and neurological conditions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+            <h3>How do I book a home physiotherapy session?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-4" class="faq-answer" role="region" aria-labelledby="faq-answer-4">
+            <p>You can book by calling <a href="tel:+919868487867">+91 9868487867</a> or messaging us on WhatsApp. We will schedule a convenient time for a home visit.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+            <h3>What is the cost of home physiotherapy?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-5" class="faq-answer" role="region" aria-labelledby="faq-answer-5">
+            <p>The cost depends on the treatment required and session duration. We offer affordable packages for home physiotherapy in Delhi NCR. Contact us for a personalised quote.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+            <h3>How long does stroke rehabilitation take?</h3>
+            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </button>
+          <div id="faq-answer-6" class="faq-answer" role="region" aria-labelledby="faq-answer-6">
+            <p>Stroke rehabilitation duration varies by severity. Mild strokes may see significant improvement in weeks, while severe strokes may require months to years of therapy. Consistent physiotherapy significantly improves outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Find Our Clinic</h2>
+        <p>E-241A, GTB Enclave, Dilshad Garden, Delhi – 110095</p>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=E-241A+GTB+Enclave+Dilshad+Garden+Delhi&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" title="BestCare Physio Location"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Start Your Recovery Journey?</h2>
+      <p>Book your first home physiotherapy session today. Our certified physiotherapists will visit you at home across Delhi NCR.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><img src="whatsapp.png" alt="WhatsApp" style="width:20px;vertical-align:middle;margin-right:6px"> Book via WhatsApp</a>
+        <a href="tel:+919868487867" class="btn btn-outline btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:0.75rem">
+        <img src="logo.png" alt="BestCare Physio" width="44" height="44">
+        <div class="nav-logo-text">
+          <span class="brand">BestCare Physio</span>
+          <span class="tagline">Paralysis &amp; Stroke Specialists</span>
+        </div>
+      </a>
+      <p>Expert home physiotherapy in Delhi NCR. Specialising in stroke rehabilitation, paralysis treatment and recovery. Serving patients across Delhi and Ghaziabad.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services/stroke-rehabilitation.html">Stroke Rehabilitation</a></li>
+        <li><a href="services/paralysis-treatment.html">Paralysis Treatment</a></li>
+        <li><a href="services/spinal-cord-injury-rehab.html">Spinal Cord Injury</a></li>
+        <li><a href="services/gait-training-therapy.html">Gait Training</a></li>
+        <li><a href="services/home-physiotherapy-delhi.html">Home Physio Delhi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Locations</h4>
+      <ul>
+        <li><a href="locations/physiotherapy-dilshad-garden.html">Dilshad Garden</a></li>
+        <li><a href="locations/physiotherapy-shahdara.html">Shahdara</a></li>
+        <li><a href="locations/physiotherapy-anand-vihar.html">Anand Vihar</a></li>
+        <li><a href="locations/physiotherapy-vivek-vihar.html">Vivek Vihar</a></li>
+        <li><a href="locations/physiotherapy-vasundhara.html">Vasundhara</a></li>
+        <li><a href="locations/physiotherapy-kaushambi.html">Kaushambi</a></li>
+        <li><a href="locations/physiotherapy-indirapuram.html">Indirapuram</a></li>
+        <li><a href="locations/physiotherapy-east-delhi.html">East Delhi</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>E-241A, GTB Enclave, Dilshad Garden, Delhi – 110095</span></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+919868487867">+91 98684 87867</a></div>
+      <div class="contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+      <div class="contact-item"><i class="fas fa-clock"></i><span>Mon–Sun: 09:00–20:00</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 BestCare Physio. All rights reserved. | Home Physiotherapy in Delhi NCR | Stroke &amp; Paralysis Rehabilitation</p>
+  </div>
+</footer>
+<a href="https://wa.me/919868487867?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20book%20a%20physiotherapy%20session." class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <img src="whatsapp.png" alt="WhatsApp">
+  <span class="float-whatsapp-label">Book via WhatsApp</span>
+</a>
+<a href="tel:+919868487867" class="float-call" aria-label="Call us"><i class="fas fa-phone"></i></a>
+<button class="back-to-top" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="js/main.js"></script>
+
 </body>
 </html>
