@@ -164,13 +164,15 @@
       }
 
       if (valid) {
-        var nameVal = contactForm.querySelector('[name="name"]').value.trim();
-        var phoneVal = contactForm.querySelector('[name="phone"]').value.trim();
+        var nameEl = contactForm.querySelector('[name="name"]');
+        var phoneEl = contactForm.querySelector('[name="phone"]');
         var emailEl = contactForm.querySelector('[name="email"]');
-        var emailVal = emailEl ? emailEl.value.trim() : '';
         var conditionEl = contactForm.querySelector('[name="condition"]');
-        var conditionVal = conditionEl ? conditionEl.value.trim() : '';
         var timeEl = contactForm.querySelector('[name="time"]');
+        var nameVal = nameEl ? nameEl.value.trim() : '';
+        var phoneVal = phoneEl ? phoneEl.value.trim() : '';
+        var emailVal = emailEl ? emailEl.value.trim() : '';
+        var conditionVal = conditionEl ? conditionEl.value.trim() : '';
         var timeVal = timeEl ? timeEl.value.trim() : '';
         var msg = 'Hi BestCare Physio, my name is ' + nameVal + '.'
           + ' Phone: ' + phoneVal
