@@ -103,7 +103,7 @@
     animEls.forEach(function (el, i) {
       // Stagger siblings inside grids
       var parent = el.parentElement;
-      if (parent && parent.classList.contains('grid-3') || parent && parent.classList.contains('grid-4') || parent && parent.classList.contains('badges-grid')) {
+      if (parent && (parent.classList.contains('grid-3') || parent.classList.contains('grid-4') || parent.classList.contains('badges-grid'))) {
         var siblings = Array.prototype.slice.call(parent.children);
         var idx = siblings.indexOf(el);
         el.style.transitionDelay = (idx * 0.08) + 's';
