@@ -5,6 +5,20 @@
 (function () {
   'use strict';
 
+  /* ---- Loading Screen ---- */
+  var loader = document.querySelector('.page-loader');
+  if (loader) {
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        loader.classList.add('hide');
+      }, 400);
+    });
+    // Fallback: hide after 2s even if load event is slow
+    setTimeout(function () {
+      if (loader) loader.classList.add('hide');
+    }, 2000);
+  }
+
   /* ---- Promo Popup ---- */
   var promoPopup = document.getElementById('promoPopup');
   if (promoPopup) {
@@ -13,7 +27,7 @@
       setTimeout(function () {
         promoPopup.classList.add('visible');
         sessionStorage.setItem('promoShown', '1');
-      }, 3000);
+      }, 2500);
     }
 
     function closePromo() {
@@ -76,7 +90,7 @@
 
   /* ---- Scroll Animations (Intersection Observer) ---- */
   if ('IntersectionObserver' in window) {
-    var fadeEls = document.querySelectorAll('.fade-in-up');
+    var animEls = document.querySelectorAll('.fade-in-up, .card, .testimonial, .location-card, .blog-card, .feature-item');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -84,14 +98,20 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-    fadeEls.forEach(function (el) {
+    animEls.forEach(function (el, i) {
+      // Stagger siblings inside grids
+      var parent = el.parentElement;
+      if (parent && (parent.classList.contains('grid-3') || parent.classList.contains('grid-4') || parent.classList.contains('badges-grid'))) {
+        var siblings = Array.prototype.slice.call(parent.children);
+        var idx = siblings.indexOf(el);
+        el.style.transitionDelay = (idx * 0.08) + 's';
+      }
       observer.observe(el);
     });
   } else {
-    // Fallback — show all
-    document.querySelectorAll('.fade-in-up').forEach(function (el) {
+    document.querySelectorAll('.fade-in-up, .card, .testimonial, .location-card, .blog-card, .feature-item').forEach(function (el) {
       el.classList.add('visible');
     });
   }
