@@ -5,6 +5,28 @@
 (function () {
   'use strict';
 
+  /* ---- Promo Popup ---- */
+  var promoPopup = document.getElementById('promoPopup');
+  if (promoPopup) {
+    var popupShown = sessionStorage.getItem('promoShown');
+    if (!popupShown) {
+      setTimeout(function () {
+        promoPopup.classList.add('visible');
+        sessionStorage.setItem('promoShown', '1');
+      }, 3000);
+    }
+
+    function closePromo() {
+      promoPopup.classList.remove('visible');
+    }
+
+    var promoClose = document.getElementById('promoClose');
+    if (promoClose) promoClose.addEventListener('click', closePromo);
+
+    var promoOverlay = promoPopup.querySelector('.promo-overlay');
+    if (promoOverlay) promoOverlay.addEventListener('click', closePromo);
+  }
+
   /* ---- Sticky Header ---- */
   var header = document.querySelector('.site-header');
   if (header) {
@@ -142,11 +164,30 @@
       }
 
       if (valid) {
-        var name = contactForm.querySelector('[name="name"]').value.trim();
-        var phone = contactForm.querySelector('[name="phone"]').value.trim();
-        var condition = contactForm.querySelector('[name="condition"]') ? contactForm.querySelector('[name="condition"]').value.trim() : '';
-        var msg = 'Hi BestCare Physio, my name is ' + name + '. My phone: ' + phone + (condition ? '. Condition/Query: ' + condition : '') + '. Please help me book a session.';
-        window.open('https://wa.me/919868487867?text=' + encodeURIComponent(msg), '_blank');
+        var nameEl = contactForm.querySelector('[name="name"]');
+        var phoneEl = contactForm.querySelector('[name="phone"]');
+        var emailEl = contactForm.querySelector('[name="email"]');
+        var conditionEl = contactForm.querySelector('[name="condition"]');
+        var timeEl = contactForm.querySelector('[name="time"]');
+        var nameVal = nameEl ? nameEl.value.trim() : '';
+        var phoneVal = phoneEl ? phoneEl.value.trim() : '';
+        var emailVal = emailEl ? emailEl.value.trim() : '';
+        var conditionVal = conditionEl ? conditionEl.value.trim() : '';
+        var timeVal = timeEl ? timeEl.value.trim() : '';
+        var msg = 'Hi BestCare Physio, my name is ' + nameVal + '.'
+          + ' Phone: ' + phoneVal
+          + (emailVal ? '. Email: ' + emailVal : '')
+          + (conditionVal ? '. Condition/Query: ' + conditionVal : '')
+          + (timeVal ? '. Preferred time: ' + timeVal : '')
+          + '. Please help me book a session.';
+        window.open('https://wa.me/918383040436?text=' + encodeURIComponent(msg), '_blank');
+
+        var successMsg = contactForm.querySelector('.form-success');
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          setTimeout(function () { successMsg.style.display = 'none'; }, 6000);
+        }
+        contactForm.reset();
       }
     });
 

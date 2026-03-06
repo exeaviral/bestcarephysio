@@ -19,6 +19,7 @@
   --radius: 12px;
   --radius-lg: 20px;
   --transition: 0.25s ease;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Oxygen, Ubuntu, sans-serif;
   --max-width: 1200px;
   --header-h: 70px;
@@ -815,4 +816,122 @@ p:last-child { margin-bottom: 0; }
   body { font-size: 12pt; }
   a { color: inherit; text-decoration: none; }
   .section { padding: 1rem 0; }
+}
+
+/* ====================================================
+   Promo Popup
+   ==================================================== */
+#promoPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+#promoPopup.visible {
+  display: flex;
+}
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+.promo-modal {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.75rem;
+  max-width: 360px;
+  width: calc(100% - 2rem);
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  animation: promoFadeIn 0.4s var(--ease-out);
+}
+@keyframes promoFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#promoClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.875rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 0.25rem;
+}
+#promoClose:hover { color: var(--text); }
+.promo-headline {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.promo-offer {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.promo-subtext {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+.btn-promo-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  width: 100%;
+}
+.btn-promo-wa:hover { background: #1ebe5d; text-decoration: none; color: #fff; }
+.btn-promo-wa img { width: 22px; height: 22px; }
+
+/* ====================================================
+   Form Success Message
+   ==================================================== */
+.form-success {
+  display: none;
+  background: #e6f9ee;
+  border: 1px solid #2ecc71;
+  color: #1a7a42;
+  border-radius: var(--radius);
+  padding: 0.875rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ====================================================
+   Mobile Improvements
+   ==================================================== */
+@media (max-width: 480px) {
+  .grid-4 { grid-template-columns: 1fr; }
+  .hero-btns, .cta-btns { flex-direction: column; align-items: stretch; }
+  .hero-btns .btn, .cta-btns .btn { width: 100%; justify-content: center; }
+  .section { padding: 2rem 0; }
+  p { line-height: 1.7; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea { width: 100%; box-sizing: border-box; }
+}
+
+/* Refine fade-in-up animation */
+.fade-in-up {
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
 }
