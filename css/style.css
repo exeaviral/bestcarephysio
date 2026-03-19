@@ -368,6 +368,66 @@ p:last-child { margin-bottom: 0; }
 .section-header h2 { margin-bottom: 0.5rem; }
 .section-header p { color: var(--text-muted); max-width: 640px; margin: 0 auto; }
 
+/* Lead physiotherapist */
+.lead-physio-card {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+.lead-physio-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow);
+  background: var(--bg-light);
+}
+.lead-physio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lead-physio-details { text-align: center; }
+.lead-physio-details h3 { margin-bottom: 0.35rem; }
+.therapist-title {
+  margin: 0 0 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.therapist-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.credential-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.credential-badge i { color: var(--primary); }
+@media (min-width: 768px) {
+  .lead-physio-card {
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    text-align: left;
+  }
+  .lead-physio-details { text-align: left; }
+  .therapist-credentials { justify-content: flex-start; }
+}
+
 /* Feature items (Why Choose Us) */
 .feature-item {
   text-align: center;
