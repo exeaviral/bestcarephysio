@@ -90,7 +90,7 @@
 
   /* ---- Scroll Animations (Intersection Observer) ---- */
   if ('IntersectionObserver' in window) {
-    var animEls = document.querySelectorAll('.fade-in-up, .card, .testimonial, .location-card, .blog-card, .feature-item');
+    var animEls = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-up, .card, .testimonial, .location-card, .blog-card, .feature-item, .process-step');
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -98,20 +98,25 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.07, rootMargin: '0px 0px -20px 0px' });
 
-    animEls.forEach(function (el, i) {
-      // Stagger siblings inside grids
+    animEls.forEach(function (el) {
+      // Stagger siblings inside grids / process-steps
       var parent = el.parentElement;
-      if (parent && (parent.classList.contains('grid-3') || parent.classList.contains('grid-4') || parent.classList.contains('badges-grid'))) {
+      if (parent && (
+        parent.classList.contains('grid-3') ||
+        parent.classList.contains('grid-4') ||
+        parent.classList.contains('badges-grid') ||
+        parent.classList.contains('process-steps')
+      )) {
         var siblings = Array.prototype.slice.call(parent.children);
         var idx = siblings.indexOf(el);
-        el.style.transitionDelay = (idx * 0.08) + 's';
+        el.style.transitionDelay = (idx * 0.07) + 's';
       }
       observer.observe(el);
     });
   } else {
-    document.querySelectorAll('.fade-in-up, .card, .testimonial, .location-card, .blog-card, .feature-item').forEach(function (el) {
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-up, .card, .testimonial, .location-card, .blog-card, .feature-item, .process-step').forEach(function (el) {
       el.classList.add('visible');
     });
   }
@@ -219,5 +224,109 @@
       });
     });
   }
+
+  /* ---- Custom Cursor ---- */
+  if (window.matchMedia('(pointer: fine)').matches) {
+    var cursorDot = document.createElement('div');
+    var cursorRing = document.createElement('div');
+    cursorDot.className = 'cursor-dot cursor-hidden';
+    cursorRing.className = 'cursor-ring cursor-hidden';
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+
+    // Initial off-screen position so cursor is never visible at 0,0 before first mousemove
+    var mouseX = -200, mouseY = -200;
+    var ringX = -200, ringY = -200;
+    // Half-widths: dot is 8px → 4px, ring is 36px → 18px (see cursor CSS)
+    var halfDot = 4, halfRing = 18;
+    var cursorActive = false;
+
+    document.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!cursorActive) {
+        cursorActive = true;
+        cursorDot.classList.remove('cursor-hidden');
+        cursorRing.classList.remove('cursor-hidden');
+      }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function () {
+      cursorDot.classList.add('cursor-hidden');
+      cursorRing.classList.add('cursor-hidden');
+    });
+
+    document.addEventListener('mouseenter', function () {
+      if (cursorActive) {
+        cursorDot.classList.remove('cursor-hidden');
+        cursorRing.classList.remove('cursor-hidden');
+      }
+    });
+
+    function animateCursor() {
+      // Dot snaps instantly — GPU-optimised via transform
+      cursorDot.style.transform = 'translate(' + (mouseX - halfDot) + 'px,' + (mouseY - halfDot) + 'px)';
+      // Ring follows with smooth interpolation (lerp factor: 0.14 = smooth but responsive)
+      ringX += (mouseX - ringX) * 0.14;
+      ringY += (mouseY - ringY) * 0.14;
+      cursorRing.style.transform = 'translate(' + (ringX - halfRing) + 'px,' + (ringY - halfRing) + 'px)';
+      requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
+    // Hover state
+    function addHoverListeners(el) {
+      el.addEventListener('mouseenter', function () {
+        cursorDot.classList.add('cursor-hover');
+        cursorRing.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', function () {
+        cursorDot.classList.remove('cursor-hover');
+        cursorRing.classList.remove('cursor-hover');
+      });
+    }
+    document.querySelectorAll('a, button, .btn, .card, .location-card, .blog-card, input, select, textarea, .faq-question, [role="button"], .process-step').forEach(addHoverListeners);
+  }
+
+  /* ---- Animated Counters ---- */
+  var counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var suffix = el.getAttribute('data-suffix') || '';
+          var duration = 1400; // ms — smooth enough without being slow
+          var startTime = null;
+
+          function countUp(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(countUp);
+            }
+          }
+          requestAnimationFrame(countUp);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(function (counter) {
+      counterObserver.observe(counter);
+    });
+  }
+
+  /* ---- Active nav link ---- */
+  var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(function (link) {
+    var href = link.getAttribute('href');
+    if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+      link.classList.add('active');
+    }
+  });
 
 })();
