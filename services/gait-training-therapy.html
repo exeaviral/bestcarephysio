@@ -4,21 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BestCare Physio | Coming Soon</title>
-  <meta name="description" content="BestCare Physio is temporarily offline while we build something better. We will be back soon.">
+  <meta name="description" content="BestCare Physio website is coming soon.">
   <meta name="robots" content="noindex, nofollow">
   <style>
     :root {
-      --bg-1: #050816;
-      --bg-2: #0b1130;
-      --bg-3: #1a0b3d;
-      --text: #f5f7ff;
-      --muted: #b9c2f0;
-      --accent-1: #7c4dff;
-      --accent-2: #00e7ff;
-      --accent-3: #ff4fd8;
-      --glass: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.16);
-      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2a37;
+      --muted: #64748b;
+      --ring: rgba(37, 99, 235, 0.16);
     }
 
     * { box-sizing: border-box; }
@@ -29,240 +23,64 @@
       display: grid;
       place-items: center;
       padding: 24px;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(70vw 70vw at 15% 10%, rgba(124, 77, 255, 0.35), transparent 60%),
-        radial-gradient(60vw 60vw at 85% 15%, rgba(0, 231, 255, 0.25), transparent 60%),
-        radial-gradient(80vw 80vw at 50% 100%, rgba(255, 79, 216, 0.18), transparent 65%),
-        linear-gradient(125deg, var(--bg-1), var(--bg-2), var(--bg-3));
-      overflow: hidden;
-    }
-
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      width: 48vmax;
-      height: 48vmax;
-      border-radius: 50%;
-      filter: blur(50px);
-      z-index: 0;
-      animation: drift 14s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-
-    body::before {
-      top: -15vmax;
-      left: -8vmax;
-      background: rgba(124, 77, 255, 0.24);
-    }
-
-    body::after {
-      bottom: -18vmax;
-      right: -10vmax;
-      background: rgba(0, 231, 255, 0.18);
-      animation-duration: 17s;
-      animation-direction: alternate-reverse;
-    }
-
-    .aurora {
-      position: fixed;
-      inset: 0;
-      background: repeating-radial-gradient(circle at 50% 50%, transparent 0 14px, rgba(255,255,255,0.03) 15px 16px);
-      opacity: 0.3;
-      z-index: 0;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
+      background: radial-gradient(circle at 20% 20%, #ffffff 0%, var(--bg) 55%);
     }
 
     .card {
-      position: relative;
-      z-index: 1;
-      width: min(880px, 100%);
-      border-radius: 28px;
-      padding: clamp(28px, 5vw, 56px);
-      background: linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px) saturate(1.3);
-      -webkit-backdrop-filter: blur(16px) saturate(1.3);
-      overflow: hidden;
+      width: min(440px, 100%);
+      padding: 36px 28px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      animation: float 5s ease-in-out infinite;
     }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      background: linear-gradient(120deg, rgba(124,77,255,0.7), rgba(0,231,255,0.65), rgba(255,79,216,0.65));
-      opacity: 0.2;
-      filter: blur(14px);
-      z-index: -1;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border-radius: 999px;
-      padding: 10px 16px;
-      margin-bottom: 18px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #ecf0ff;
-      background: rgba(10, 18, 50, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .pulse {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #77ffcf;
-      box-shadow: 0 0 0 rgba(119, 255, 207, 0.7);
-      animation: pulse 1.8s infinite;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      font-size: 1.04rem;
-      color: #e5ebff;
-    }
-
-    .brand img {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    .logo {
+      width: 64px;
+      height: 64px;
       object-fit: contain;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 6px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 8px;
+      box-shadow: 0 0 0 0 var(--ring);
+      animation: pulse 2.6s ease-in-out infinite;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      max-width: 12ch;
-      text-wrap: balance;
-      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    h1 .shine {
-      display: inline-block;
-      background: linear-gradient(92deg, #ffffff 10%, #cce3ff 45%, #84f1ff 60%, #ffc2f2 80%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    p {
-      margin: 18px 0 0;
-      max-width: 62ch;
-      font-size: clamp(1rem, 2vw, 1.18rem);
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .actions {
-      margin-top: 34px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-width: 190px;
-      padding: 14px 22px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      text-decoration: none;
+    .name {
+      margin: 16px 0 6px;
+      font-size: 1.45rem;
       font-weight: 700;
       letter-spacing: 0.01em;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
 
-    .btn-primary {
-      color: #051426;
-      background: linear-gradient(95deg, #7af8ff, #85d1ff, #bca4ff);
-      box-shadow: 0 12px 30px rgba(64, 211, 255, 0.28);
+    .soon {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .btn-secondary {
-      color: #e9eeff;
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 16px 36px rgba(64, 211, 255, 0.4);
-    }
-
-    .meta {
-      margin-top: 26px;
-      font-size: 0.9rem;
-      color: #ced8ff;
-      opacity: 0.85;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(119, 255, 207, 0.7); }
-      70% { box-shadow: 0 0 0 12px rgba(119, 255, 207, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(119, 255, 207, 0); }
-    }
-
-    @keyframes drift {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(18px, -24px, 0) scale(1.06); }
-    }
-
-    @media (max-width: 720px) {
-      body { padding: 16px; }
-      .card { border-radius: 22px; }
-      .btn { width: 100%; min-width: 0; }
-      .actions { margin-top: 28px; }
+      0%, 100% { box-shadow: 0 0 0 0 var(--ring); }
+      50% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
     }
   </style>
 </head>
 <body>
-  <div class="aurora" aria-hidden="true"></div>
-
-  <main class="card">
-    <div class="badge"><span class="pulse" aria-hidden="true"></span> Service Upgrade in Progress</div>
-
-    <div class="brand">
-      <img src="/logo.png" alt="BestCare Physio logo">
-      <span>BestCare Physio</span>
-    </div>
-
-    <h1>We&rsquo;re crafting a <span class="shine">fascinating new experience</span>.</h1>
-    <p>
-      Our website is temporarily offline while we launch a faster, smarter, and more beautiful version.
-      Thank you for your patience — we&rsquo;ll be back online very soon.
-    </p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="tel:+918383040436">Call Us: +91 83830 40436</a>
-      <a class="btn btn-secondary" href="https://wa.me/918383040436?text=Hi%20BestCare%20Physio%2C%20please%20update%20me%20when%20the%20new%20website%20is%20live." target="_blank" rel="noopener">WhatsApp Updates</a>
-    </div>
-
-    <p class="meta">Until then, we remain available for appointments and patient support every day.</p>
+  <main class="card" role="main">
+    <img class="logo" src="/logo.png" alt="BestCare Physio logo">
+    <h1 class="name">BestCare Physio</h1>
+    <p class="soon">Coming Soon</p>
   </main>
 </body>
 </html>
