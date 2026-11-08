@@ -5,48 +5,6 @@
 (function () {
   'use strict';
 
-  /* ---- Diwali Week Offer ---- */
-  var whatsappUrl = 'https://wa.me/918383040436?text=Hi%20BestCare%20Physio%2C%20I%20would%20like%20to%20avail%20the%20Diwali%20week%20offer%20on%20physiotherapy%20or%20diagnostic%20services.';
-  var diwaliBanner = document.createElement('aside');
-  diwaliBanner.className = 'diwali-banner';
-  diwaliBanner.setAttribute('aria-label', 'Diwali week offer');
-  diwaliBanner.innerHTML =
-    '<div class="diwali-banner-inner">'
-    + '<div class="diwali-banner-copy">'
-    + '<span class="diwali-banner-kicker">Diwali Week Offer</span>'
-    + '<strong>Up to 50% off</strong>'
-    + '<small>Physiotherapy &amp; diagnostic services · Valid till 15 November</small>'
-    + '</div>'
-    + '<a class="diwali-banner-cta" href="' + whatsappUrl + '" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Contact now</a>'
-    + '</div>'
-    + '<button class="diwali-banner-close" type="button" aria-label="Close Diwali offer">&times;</button>';
-  document.body.insertBefore(diwaliBanner, document.body.firstChild);
-
-  diwaliBanner.querySelector('.diwali-banner-close').addEventListener('click', function () {
-    diwaliBanner.remove();
-  });
-
-  var diwaliWhatsapp = document.createElement('a');
-  diwaliWhatsapp.className = 'diwali-whatsapp';
-  diwaliWhatsapp.href = whatsappUrl;
-  diwaliWhatsapp.target = '_blank';
-  diwaliWhatsapp.rel = 'noopener';
-  diwaliWhatsapp.setAttribute('aria-label', 'Contact BestCare Physio on WhatsApp');
-  diwaliWhatsapp.innerHTML = '<i class="fab fa-whatsapp"></i><span>Contact on WhatsApp</span>';
-  document.body.appendChild(diwaliWhatsapp);
-
-  var promoOffer = document.querySelector('.promo-offer');
-  var promoHeadline = document.querySelector('.promo-headline');
-  var promoSubtext = document.querySelector('.promo-subtext');
-  var promoLink = document.querySelector('.btn-promo-wa');
-  if (promoHeadline) promoHeadline.textContent = '🪔 Diwali Week Offer';
-  if (promoOffer) promoOffer.innerHTML = '<strong>UP TO 50% OFF</strong><br><span>Physiotherapy &amp; diagnostic services</span>';
-  if (promoSubtext) promoSubtext.textContent = 'Celebrate with better health. Offer valid till 15 November.';
-  if (promoLink) {
-    promoLink.href = whatsappUrl;
-    promoLink.innerHTML = '<i class="fab fa-whatsapp"></i> Contact now on WhatsApp';
-  }
-
   /* ---- Loading Screen ---- */
   var loader = document.querySelector('.page-loader');
   if (loader) {
